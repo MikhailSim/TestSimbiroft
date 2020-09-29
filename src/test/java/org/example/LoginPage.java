@@ -7,29 +7,38 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
     public WebDriver driver;
+
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
+
     @FindBy(xpath = "//*[contains(@id, 'identifierId')]")
     private WebElement loginField;
-    @FindBy(xpath = "//*[@id=\"identifierNext\"]/div/button/div[2]")
-    private WebElement loginBtn;
-    @FindBy(xpath = "//*[@id=\"password\"]/div[1]/div/div[1]/input")
-    private WebElement passwdField;
-    @FindBy(xpath = "//*[@id=\"passwordNext\"]/div/button/div[2]")
-    private WebElement passwdBtn;
+    @FindBy(xpath = "//*[@id='identifierNext']/div/button/div[2]")
+    private WebElement loginButton;
+    @FindBy(xpath = "//*[@id='password']/div[1]/div/div[1]/input")
+    private WebElement passwordField;
+    @FindBy(xpath = "//*[@id='passwordNext']/div/button/div[2]")
+    private WebElement passwordButton;
+
 
     public void inputLogin(String login) {
-        loginField.sendKeys("webtestsimbirsoft@gmail.com");
+        loginField.sendKeys(login);
     }
-    public void inputPasswd(String passwd) {
-        passwdField.sendKeys("webtestsimbirsoft666");
+
+
+    public void inputPassword(String password) {
+        passwordField.sendKeys(password);
     }
-    public void clickLoginBtn() {
-        loginBtn.click();
+
+    //    @Step("Ввод логина {login}")
+    public void clickLoginButton() {
+        loginButton.click();
     }
-    public void clickPasswdBtn() {
-        passwdBtn.click();
+
+    //    @Step("Ввод пароля {password}")
+    public void clickPasswordButton() {
+        passwordButton.click();
     }
 }
