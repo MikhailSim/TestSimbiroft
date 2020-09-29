@@ -24,7 +24,9 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
-                    <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
                     <properties>
                         <property>
                             <name>listener</name>
@@ -34,7 +36,7 @@
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
-                            <value>C:\Program Files (x86)\Jenkins\workspace\Second\allure-results</value>
+                            <value>C:\Users\Dell\IdeaProjects\TestUI\target</value>
                         </property>
                     </systemProperties>
                 </configuration>
@@ -77,20 +79,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
         </dependency>
     </dependencies>
 
